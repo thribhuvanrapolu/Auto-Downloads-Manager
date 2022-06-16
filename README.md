@@ -17,6 +17,7 @@ src_path is file name while downloading and dest_path is the downloaded file nam
 
 This function on_moved checks whether src_path ends with '.crdownload' extension and if yes then move the file to respective Documents/Videos/Music/Photos folder based on file extension. 
 
+YOU CAN SEE ALL THE LOGS(THE FILES MOVED BY THE CODE) IN logfile.log
 
 ### WARNING:
 whenever you download the file you cant open it from your web browser as the file doesnt exist in download folder location.
