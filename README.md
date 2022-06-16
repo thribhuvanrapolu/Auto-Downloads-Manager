@@ -1,4 +1,4 @@
-# project-auto-file-manager
+# Auto-Downloads-Manager
 
 Whenever you download files they get saved in downloads folder or you have to manually select the folder to which location you want to save the file.
 Manually selecting the location everytime you download something is pain. 
