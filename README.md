@@ -6,7 +6,7 @@ Most of them select download folder as default location. So whenever you downloa
 
 What this python code does is whenever u download file it automatically moves them to Documents/Videos/Music/Photos folder based on file extension.
 
-To make this code run on your system edit line 25,53,58,63,68,75 by replacing with the respective file location in your system
+To make this code run on your system edit lines 26,54,59,64,69,76 by replacing with the respective file location in your system
 
 ## How the Algorithm works:
 So whenever you download a file from web browser it saves the file with extension .crdownload and with download completes it saves the file with its original extension(like .mkv,.jpg etc) which basically is just renaming the file.
@@ -19,6 +19,9 @@ This function on_moved checks whether src_path ends with '.crdownload' extension
 
 YOU CAN SEE ALL THE LOGS(THE FILES MOVED BY THE CODE) IN logfile.log
 
+## HOW TO RUN THE CODE 
+1)run "pip install requirements.txt"
+2)edit lines 26,54,59,64,69,76
 ### WARNING:
 whenever you download the file you cant open it from your web browser as the file doesnt exist in download folder location.
  
