@@ -6,4 +6,4 @@ Most of them select download folder as default location. So whenever you downloa
 
 What this python code does is whenever u download file it automatically moves them to Documents/Videos/Music/Photos folder based on file extension.
 
-
+To make this code run on your system edit line 24,50,56,62,68,75
