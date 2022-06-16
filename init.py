@@ -21,8 +21,6 @@ def log(file,location):
     ct = datetime.datetime.now()
     print(ct," - \"",file,"\":saved file in \"",location,"\"")
 
-
-
 class Watcher:
 
     def __init__(self, directory="/home/anakin513/Downloads", handler=FileSystemEventHandler()):
