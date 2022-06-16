@@ -20,10 +20,13 @@ This function on_moved checks whether src_path ends with '.crdownload' extension
 YOU CAN SEE ALL THE LOGS(THE FILES MOVED BY THE CODE) IN logfile.log
 
 ## HOW TO RUN THE CODE 
-1.Run "pip install requirements.txt" 
-2.Edit lines 26,54,59,64,69,76 with respective locations in your system
+1.Run "pip install requirements.txt"
+
+2.Edit lines 26,54,59,64,69,76 with respective locations in your system.
+
 3.Run the code and Done!
 
 ### WARNING:
 1.Whenever you download the file you cant open it from your web browser as the file doesnt exist in download folder location.
+
 2.This algorithm doesnt move files to their respective folder if you have manually copied file from one directory and pasted them in the Downloads folder. So it allows you to store some important files in Downloads folder.  
