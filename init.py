@@ -1,3 +1,4 @@
+from itertools import count
 import shutil #for moving files
 import time
 import logging
@@ -18,12 +19,6 @@ def log(file,location):
     logger.info("\" %s \" :saved file in %s",file,location)
 
 
-def check(filename):
-    for i in data:
-        if(i==filename):
-            data.remove(filename)
-            return True
-
 
 class Watcher:
 
@@ -37,8 +32,6 @@ class Watcher:
             self.handler, self.directory, recursive=False)
         self.observer.start()
         print("\nWatcher Running in {}/\n".format(self.directory))
-        global data
-        data=[]
         
         try:
             while True:
@@ -51,33 +44,27 @@ class Watcher:
 
 
 class MyHandler(FileSystemEventHandler):
-   
-    def on_modified(self, event):
-        # print(event)
+    def on_moved(self, event):
         if event.src_path.endswith(".crdownload"):
-            s=event.src_path[26:len(event.src_path)-11]
-            data.append(s)
-
-        original=event.src_path
-        filename=event.src_path[26:]
-        
-        if(check(filename)==True):
-            if event.src_path.endswith((".mp4",".avi",".drc",".mng",".TS",".M2TS",".MTS",".mkv",".webm",".mpg",".mpeg",".mpe",".mpv",".ogg",".ogv",".m4p",".m4v",".wmv",".mov",".qt",".flv",".swf",".avchd",".vob",".yuv")):
+            original=event.dest_path
+            filename=event.dest_path[26:]
+            
+            if event.dest_path.endswith((".mp4",".avi",".drc",".mng",".TS",".M2TS",".MTS",".mkv",".webm",".mpg",".mpeg",".mpe",".mpv",".ogg",".ogv",".m4p",".m4v",".wmv",".mov",".qt",".flv",".swf",".avchd",".vob",".yuv")):
                 target="/home/anakin513/Videos/"+filename            
                 shutil.move(original,target)
                 log(filename,"Videos")
             
-            elif event.src_path.endswith((".3gp",".aa",".aac",".aax",".act",".aiff",".alac",".amr",".ape",".au",".awb",".dss",".dvf",".flac",".gsm",".iklax",".ivs",".m4a",".m4b",".m4p",".mmf",".mp3",".mpc",".msv",".nmf",".ogg",".oga",".mogg",".opus",".ra",".rm",".raw",".rf64",".sln",".tta",".voc",".vox",".wav",".wma",".wv",".webm",".8svx",".cda")):
+            elif event.dest_path.endswith((".3gp",".aa",".aac",".aax",".act",".aiff",".alac",".amr",".ape",".au",".awb",".dss",".dvf",".flac",".gsm",".iklax",".ivs",".m4a",".m4b",".m4p",".mmf",".mp3",".mpc",".msv",".nmf",".ogg",".oga",".mogg",".opus",".ra",".rm",".raw",".rf64",".sln",".tta",".voc",".vox",".wav",".wma",".wv",".webm",".8svx",".cda")):
                 target="/home/anakin513/Music/"+filename
                 shutil.move(original,target)
                 log(filename,"Music")
             
-            elif event.src_path.endswith((".pdf",".docx",".xlsx",".doc",".odt",".xls",".ods",".ppt",".pptx",".txt")):
+            elif event.dest_path.endswith((".pdf",".docx",".xlsx",".doc",".odt",".xls",".ods",".ppt",".pptx",".txt")):
                 target="/home/anakin513/Documents/"+filename
                 shutil.move(original,target)
                 log(filename,"Documents")
             
-            elif event.src_path.endswith((".jpg",".jpeg",".png",".tiff",".psd",".webp",".cr2",".crw",".nef",".pef",".gif")):
+            elif event.dest_path.endswith((".jpg",".jpeg",".png",".tiff",".psd",".webp",".cr2",".crw",".nef",".pef",".gif")):
                 target="/home/anakin513/Pictures/"+filename
                 shutil.move(original,target)
                 log(filename,"Pictures")
