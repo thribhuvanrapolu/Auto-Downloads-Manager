@@ -30,7 +30,7 @@ YOU CAN SEE ALL THE LOGS(THE FILES MOVED BY THE CODE) IN logfile.log
 
 3.Run the code and Done!
 
-### WARNING:
+## WARNING:
 1.Whenever you download the file you cant open it from your web browser as the file doesnt exist in download folder location.
 
 2.This algorithm doesnt move files to their respective folder if you have manually copied file from one directory and pasted them in the Downloads folder. So it allows you to store some important files in Downloads folder.  
