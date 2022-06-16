@@ -4,7 +4,7 @@ import time
 import logging
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
-
+import datetime
 
 def log(file,location):
     Log_Format = "%(levelname)s %(asctime)s - %(message)s"
@@ -17,6 +17,9 @@ def log(file,location):
     logger = logging.getLogger()
 
     logger.info("\" %s \" :saved file in %s",file,location)
+    
+    ct = datetime.datetime.now()
+    print(ct," - \"",file,"\":saved file in \"",location,"\"")
 
 
 
@@ -40,7 +43,7 @@ class Watcher:
             self.observer.stop()
         self.observer.join()
         print("\nWatcher Terminated\n")
-        logging.info('Finished')
+        logging.info('Code Terminated')
 
 
 class MyHandler(FileSystemEventHandler):
