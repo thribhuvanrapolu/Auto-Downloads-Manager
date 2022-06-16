@@ -21,7 +21,7 @@ src_path is file name while downloading and dest_path is the downloaded file nam
 
 This function on_moved checks whether src_path ends with '.crdownload' extension and if yes then move the file to respective Documents/Videos/Music/Photos folder based on file extension. 
 
-YOU CAN SEE ALL THE LOGS(THE FILES MOVED BY THE CODE) IN logfile.log
+#### YOU CAN SEE ALL THE LOGS(THE FILES MOVED BY THE CODE) IN logfile.log
 
 ## HOW TO RUN THE CODE 
 1.Run "pip install requirements.txt"
